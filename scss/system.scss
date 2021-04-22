@@ -1,0 +1,242 @@
+@mixin small {
+	@media (max-width: #{$sm}) {
+		@content;
+	}
+}
+
+@mixin large {
+	@media (min-width: #{$lg}) {
+		@content;
+	}
+}
+
+@mixin xlarge {
+	@media (min-width: #{$xlg}) {
+		@content;
+	}
+}
+
+@mixin ie {
+	@media screen and (min-width:0\0) and (min-resolution: +72dpi) {
+		@content;
+	}
+}
+
+@mixin setFont($fontSize, $lineHeight, $fontWeight) {
+	font-size: #{$fontSize};
+	line-height: #{$lineHeight};
+	font-weight: #{$fontWeight};
+}
+
+.para {
+	width: 100%;
+	@include setFont(14px, 21px, 400);
+
+	@include xlarge {
+		@include setFont(28px, 42px, 400);
+	}
+}
+
+.negativeSkew {
+	transform: skew(-$skew);
+	-ms-transform: skew(-$skew);
+}
+
+.positiveSkew {
+	transform: skew($skew);
+	-ms-transform: skew($skew);
+}
+
+.button {
+	@extend .negativeSkew;
+	background-color: rgb(218, 204, 204);
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 600;
+	transform-origin: top;
+	-ms-transform-origin: top;
+
+	@include xlarge {
+		font-size: 18px;
+	}
+
+	&--md {
+		height: 40px;
+		padding: 0 32px;
+
+		@include xlarge {
+			height: 48px;
+			padding: 0 40px;
+		}
+	}
+
+	&--lg {
+		height: 48px;
+		padding: 0 40px;
+
+		@include xlarge {
+			height: 56px;
+			padding: 0 48px;
+		}
+	}
+
+	& > * {
+		@extend .positiveSkew;
+		display: block;
+		line-height: 24px;
+		font-weight: 600;
+	}
+
+	&--primary {
+		background-color: $white;
+		color: $black;
+	}
+
+	&--secondary {
+		color: $white;
+		background-color: #8b8b8b;
+	}
+
+	&--ghost {
+		border: 1px solid #8b8b8b;
+		color: #8b8b8b;
+		background-color: transparent;
+
+		@include xlarge {
+			border-width: 2px;
+		}
+	}
+}
+
+.section-lead {
+	&__heading {
+		$mb: 48px;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: $mb;
+
+		@include xlarge {
+			margin-bottom: $mb * 2;
+		}
+
+		&--center {
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+
+			& .section-lead__heading-text {
+				display: flex;
+				justify-content: center;
+			}
+		}
+	}
+
+	&__text {
+		$mb: 32px;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: $mb;
+
+		@include xlarge {
+			margin-bottom: $mb * 2;
+		}
+
+		& > span {
+			@include setFont(15px, 18px, 400);
+			text-transform: uppercase;
+
+			@include xlarge {
+				@include setFont(30px, 36px, 400);
+			}
+		}
+	}
+
+	&__line {
+		@extend .negativeSkew;
+		width: 86px;
+		height: 4px;
+		background-color: $grey-dark;
+	}
+
+	&__desc {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		&--center {
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__para {
+		width: 100%;
+		margin-bottom: 24px;
+		@include setFont(14px, 21px, 400);
+
+		@include xlarge {
+			@include setFont(28px, 42px, 400);
+		}
+	}
+}
+
+.main-lead {
+	display: flex;
+	flex-direction: column;
+
+	&--left {
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+
+	&--center {
+		align-items: center;
+		justify-content: center;
+	}
+
+	// Text {{{
+	&__text {
+		width: 100%;
+		margin-bottom: 32px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__title {
+		margin-bottom: 16px;
+	}
+
+	&__desc {
+		max-width: 600px;
+	}
+	/// }}}
+
+	// Button
+	&__button {
+	}
+}
+
+.heading1 {
+	@include setFont(56px, 68px, 700);
+
+	@include xlarge {
+		@include setFont(112px, 136px, 700);
+	}
+}
+
+.heading2 {
+	@include setFont(32px, 40px, 700);
+
+	@include xlarge {
+		@include setFont(64px, 80px, 700);
+	}
+}
+
+.heading3 {
+	@include setFont(18px, 21px, 700);
+
+	@include xlarge {
+		@include setFont(36px, 42px, 700);
+	}
+}

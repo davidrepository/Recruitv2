@@ -1,0 +1,131 @@
+.portfolio {
+	display: flex;
+	position: relative;
+	width: 100%;
+	background-color: $grey-light;
+	padding: 65px 0;
+	padding-left: 195px;
+
+	@include small {
+		display: block;
+		padding: 0;
+		padding-top: 80px;
+	}
+
+	// @include xlarge {
+	// 	padding-left: 0;
+	// }
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		max-width: 380px;
+		z-index: 1;
+
+		@include xlarge {
+			max-width: 600px;
+		}
+
+		@include small {
+			margin-bottom: 80px;
+			justify-items: center;
+			max-width: none;
+			width: 100%;
+			padding: 0 $mobile-padding;
+
+			& .section-lead {
+				&__heading {
+					align-items: center;
+				}
+
+				&__text {
+					align-items: center;
+				}
+
+				&__desc {
+					align-items: center;
+				}
+
+				&__para {
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	&__building {
+		@extend .negativeSkew;
+		transform-origin: bottom;
+		overflow: hidden;
+		height: 100%;
+		
+		@include small {
+			height: auto;
+			transform: none;
+		}
+		
+		
+		&-wrapper {
+			position: absolute;
+			display: flex;
+			justify-content: flex-end;
+			height: 130%;
+			top: -10%;
+			right: 0;
+			max-width: 50%;
+			
+
+			@include small {
+				position: relative;
+				height: auto;
+				right: auto;
+				max-width: none;
+			}
+
+		}
+
+		& > img {
+			@extend .positiveSkew;
+			transform-origin: bottom;
+			height: 100%;
+
+			@include small {
+				height: auto;
+				width: 100%;
+				transform: none;
+			}
+		}
+
+		&-info {
+			transform: skew(-$skew) translateY(50%);
+			background-color: $white;
+			position: absolute;
+			left: 35%;
+			bottom: 0;
+			z-index: 2;
+			padding: 50px 100px;
+			transform-origin: top;
+			width: 100%;
+
+			& > div {
+				display: flex;
+				flex-direction: column;
+				max-width: 260px;
+				transform: skew($skew);
+
+				@include small {
+					width: auto;
+				}
+
+				@include xlarge {
+					max-width: 50%;
+				}
+
+				& > h3 {
+					white-space: initial;
+					margin-bottom: 16px;
+				}
+			}
+		}
+	}
+}

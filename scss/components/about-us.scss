@@ -1,0 +1,100 @@
+.about-us {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	padding-top: 210px;
+	padding-bottom: 210px;
+	z-index: 2;
+
+	@include small {
+		padding-left: $mobile-padding;
+		padding-right: $mobile-padding;
+		padding-bottom: 160px;
+	}
+
+	@include xlarge {
+		padding-top: 350px;
+		padding-bottom: 350px;
+	}
+
+	&__container {
+		max-width: 960px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		@include small {
+			max-width: none;
+			width: 100%;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		max-width: 600px;
+		margin-bottom: 50px;
+
+		@include small {
+			max-width: none;
+			width: 100%;
+		}
+
+		@include xlarge {
+			max-width: 1000px;
+		}
+	}
+
+	&__dots {
+		display: flex;
+		justify-content: flex-end;
+		flex-direction: row;
+
+		@include small {
+			justify-content: center;
+		}
+	}
+
+	&__dot {
+		@extend .negativeSkew;
+
+		height: 20px;
+		width: 20px;
+		border: 1px solid $black;
+		box-sizing: border-box;
+		margin-right: 16px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&-active {
+			background-color: $black;
+			border: none;
+		}
+	}
+
+	& > img {
+		$t: 64px;
+		$h: 400px;
+		position: absolute;
+		height: $h;
+		top: $t;
+		left: 0;
+
+		// Exceptions
+		@media (max-width: 1200px) {
+			height: 400px;
+		}
+
+		@include small {
+			display: block;
+			height: 25%;
+		}
+		@include xlarge {
+			top: $t * 2;
+			height: $h * 2;
+		}
+	}
+}

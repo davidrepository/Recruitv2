@@ -1,0 +1,122 @@
+@import './variables.scss';
+@import './system.scss';
+@import './reset.scss';
+
+@import './components/mobile-menu.scss';
+
+@import './components/site-bar.scss';
+@import './components/header.scss';
+@import './components/about-us.scss';
+@import './components/portfolio.scss';
+@import './components/quotation.scss';
+@import './components/latest-news.scss';
+@import './components/trusted.scss';
+
+.main {
+	width: 100vw;
+	min-height: 100vh;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+// .grid {
+// 	&__background {
+// 		@extend .negativeSkew;
+// 		position: absolute;
+// 		display: flex;
+// 		z-index: -1;
+// 		top: 100vh;
+// 		left: 0;
+// 		width: 4000px;
+// 		height: 100%;
+// 		transform-origin: top;
+// 		-ms-transform-origin: top;
+// 		padding-left: 96px;
+// 		// grid-template-columns: repeat(16, 1fr);
+
+// 		@include small {
+// 			width: 3600px;
+// 		}
+
+// 		@include xlarge {
+// 			width: 260vw;
+// 		}
+
+// 		& > * {
+// 			border-right: 1px solid $grey-light;
+
+// 			&:first-of-type {
+// 				border-left: 1px solid $grey-light;
+// 			}
+// 		}
+// 	}
+
+// 	&__cell {
+// 		position: relative;
+// 		width: 250px;
+// 	}
+
+// 	&__block1 {
+// 		height: 240px;
+// 		width: calc(100% + 20px);
+// 		background-color: $grey-light;
+
+// 		@include small {
+// 			height: 180px;
+// 		}
+
+// 		@include xlarge {
+// 			width: 360px;
+// 			height: 360px;
+// 		}
+// 	}
+
+// 	&__block2 {
+// 		height: 420px;
+// 		margin-left: -150px;
+// 		width: calc(100% + 200px);
+// 		margin-top: 2680px;
+// 		background-color: $grey-light;
+
+// 		@include small {
+// 			height: 360px;
+// 		}
+
+// 		@include xlarge {
+// 			height: 630px;
+// 			width: 630px;
+// 		}
+// 	}
+
+// 	&__block3 {
+// 		$size: 500px;
+// 		height: $size;
+// 		width: $size;
+// 		background-color: $grey-light;
+// 		margin-top: 2200px;
+// 		display: grid;
+// 		justify-items: start;
+// 		align-items: end;
+// 		overflow: hidden;
+// 		position: relative;
+
+// 		@include small {
+// 			width: 440px;
+// 			height: 440px;
+// 		}
+
+// 		@include xlarge {
+// 			width: $size * 2;
+// 			height: $size * 2;
+// 		}
+
+// 		&-1 {
+// 			position: absolute;
+// 			bottom: 0;
+// 			width: 100%;
+// 			height: 100%;
+// 			background-color: rgba(0, 0, 0, 0.4);
+// 		}
+// 	}
+// }

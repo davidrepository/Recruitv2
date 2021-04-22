@@ -1,0 +1,161 @@
+.quotation {
+	position: relative;
+	margin-top: 260px;
+	margin-bottom: 190px;
+	width: 100vw;
+
+	@include xlarge {
+		margin-top: 450px;
+		margin-bottom: 300px;
+	}
+
+	&:before,
+	&:after {
+		$h: 300px;
+		content: '';
+		position: absolute;
+		background-color: $grey-dark;
+		width: 2px;
+		height: $h;
+		transform: skew(-$skew);
+		z-index: 10;
+
+		@include xlarge {
+			height: $h * 2;
+		}
+	}
+
+	&:before {
+		bottom: -240px;
+		left: 280px;
+		transform-origin: bottom;
+
+		@include small {
+			left: 140px;
+			bottom: -120px;
+			height: 150px;
+		}
+
+		@include xlarge {
+			bottom: -520px;
+		}
+	}
+
+	&:after {
+		top: -150px;
+		right: 20px;
+
+		background-color: $grey-dark;
+
+		@include small {
+			display: none;
+		}
+	}
+
+	&__container {
+		@extend .negativeSkew;
+		width: 70%;
+		padding: 0 100px;
+		padding-bottom: 56px;
+		padding-top: 70px;
+		align-items: center;
+		transform-origin: top;
+		background-color: $black;
+
+		@include small {
+			width: 95%;
+			padding: 40px 80px;
+			padding-left: 120px;
+		}
+
+		@include xlarge {
+			padding: 0 200px;
+			padding-top: 200px;
+			padding-bottom: 180px;
+		}
+	}
+
+	&__inner {
+		@extend .positiveSkew;
+		display: flex;
+		// align-items: center;
+		// justify-items: center;
+		color: $white;
+
+		& > .heading2 {
+			margin-right: 80px;
+
+			@include small {
+				margin-right: 0;
+			}
+		}
+
+		@include small {
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+
+			& > h3 {
+				margin-right: 0;
+				margin-bottom: 50px;
+			}
+		}
+	}
+
+	&__quot {
+		display: grid;
+		justify-items: end;
+		max-width: 360px;
+
+		@include small {
+			padding: 0;
+		}
+
+		@include xlarge {
+			max-width: 720px;
+		}
+
+		& > p {
+			position: relative;
+			margin-bottom: 24px;
+
+			&:before,
+			&:after {
+				$fs: 32px;
+				position: absolute;
+				color: $grey-dark;
+
+				font-weight: 700;
+				z-index: 10;
+				font-size: $fs;
+
+				@include xlarge {
+					font-size: $fs * 2;
+				}
+			}
+
+			&:before {
+				content: '“';
+				top: -20px;
+				left: -40px;
+
+				@include xlarge {
+					top: -20px;
+					left: -60px;
+				}
+			}
+
+			&:after {
+				content: '”';
+				right: -40px;
+				bottom: -20px;
+
+				@include xlarge {
+					right: -60px;
+					bottom: -20px;
+				}
+			}
+		}
+	}
+}

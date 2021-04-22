@@ -1,0 +1,292 @@
+.latest-news {
+	position: relative;
+	display: flex;
+	align-self: center;
+	flex-direction: column;
+	width: 100%;
+	margin-bottom: 100px;
+
+	@include small {
+		margin-bottom: 50px;
+	}
+
+	// @include small {
+	// 	margin-bottom: 125px;
+
+	// 	& .main-lead {
+	// 		justify-items: center;
+	// 		&__text {
+	// 			text-align: center;
+	// 		}
+	// 	}
+	// }
+
+	&__content {
+
+	}
+
+	&__body {
+		width: 50%;
+		margin-left: 50%;
+		@include small {
+			width: 100%;
+		}
+
+		&-container {
+			display: flex;
+
+			@include small {
+				flex-direction: column;
+				justify-content: flex-start;
+				padding: 80px $mobile-padding;
+
+				& .section-lead__desc {
+					order: 2;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+
+				& .main-lead__text {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	&__building {
+		&-container {
+			position: absolute;
+			width: 40%;
+
+			@include small {
+				width: 100%;
+				position: relative;
+			}
+		}
+
+		& > img {
+			// display: none;
+			width: 100%;
+			// @include small {
+			// 	width: 100%;
+			// }
+		}
+	}
+
+	&__carousel {
+		// background-color: green;
+
+		@include small {
+			order: 1;
+			margin-bottom: 40px;
+		}
+
+		&-item {
+			position: relative;
+			float: left;
+			padding: 24px;
+			width: 50%;
+
+			@include setFont(14px, 21px, 700);
+			text-decoration: underline;
+
+			@include xlarge {
+				@include setFont(28px, 42px, 700);
+			}
+
+			&--active {
+				font-weight: 700;
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 100%;
+					width: 40px;
+					height: 4px;
+					background-color: $grey-dark;
+
+					// @include small {
+					// 	margin-top: 8px;
+					// }
+				}
+			}
+		}
+	}
+
+	// @include xlarge {
+	// 	margin-bottom: 500px;
+	// }
+
+	// &__content {
+	// 	display: flex;
+	// 	margin-top: 26px;
+
+	// 	@include small {
+	// 		margin-top: 0;
+	// 	}
+	// }
+
+	// &__body {
+	// 	// padding: 0 150px;
+
+	// 	// @include xlarge {
+	// 	// 	padding: 0;
+	// 	// }
+
+	// 	// @include small {
+	// 	// 	padding: 0 $mobile-padding;
+	// 	// }
+
+	// 	// & > div {
+	// 	// 	display: flex;
+
+	// 	// 	@include small {
+	// 	// 		// grid-template-columns: none;
+	// 	// 		display: block;
+	// 	// 	}
+	// 	// }
+
+	// 	&-container {
+	// 		display: flex;
+	// 		position: relative;
+
+	// 		& .main-lead {
+	// 			padding-right: 40px;
+	// 		}
+
+	// 		// @include xlarge {
+	// 		// 	gap: 112px;
+	// 		// }
+
+	// 		@include small {
+
+	// 			& .main-lead {
+	// 				padding-right: 0;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	// &__building {
+	// 	@extend .negativeSkew;
+	// 	height: 100%;
+	// 	transform-origin: top;
+	// 	overflow: hidden;
+
+	// 	@include small {
+	// 		height: auto;
+	// 		transform: none;
+	// 		margin-left: -40px;
+	// 	}
+
+	// 	& img {
+	// 		@extend .positiveSkew;
+	// 		height: 100%;
+	// 		transform-origin: top;
+
+	// 		@include small {
+	// 			transform: none;
+	// 			width: 100%;
+	// 			height: auto;
+	// 		}
+	// 	}
+
+	// 	&-container {
+	// 		height: 50%;
+	// 		position: absolute;
+	// 		z-index: 1;
+	// 		top: 0;
+	// 		left: 0;
+	// 		margin-bottom: 56px;
+
+	// 		@include small {
+	// 			position: relative;
+	// 			height: auto;
+	// 			width: 100%;
+	// 		}
+
+	// 		// @include small {
+	// 		// 	position: relative;
+	// 		// 	height: auto;
+	// 		// 	width: 100%;
+	// 		// 	height: auto !important;
+	// 		// }
+
+	// 		// @include large {
+	// 		// 	height: 430px;
+	// 		// }
+
+	// 		// @include xlarge {
+	// 		// 	height: 120%;
+	// 		// }
+	// 	}
+	// }
+
+	// &__carousel {
+	// 	display: grid;
+	// 	align-content: start;
+	// 	grid-auto-flow: row;
+	// 	width: 150px;
+
+	// 	@include xlarge {
+	// 		width: 250px;
+	// 	}
+
+	// 	@include small {
+	// 		grid-row: 1;
+	// 		grid-template-columns: repeat(2, 1fr);
+	// 		width: auto;
+
+	// 		margin-bottom: 56px;
+
+	// 		&-item:nth-child(odd) {
+	// 			margin-right: 32px;
+	// 		}
+	// 		&-item:nth-child(1),
+	// 		&-item:nth-child(2) {
+	// 			margin-bottom: 32px;
+	// 		}
+	// 	}
+
+	// 	&-item {
+	// 		@include setFont(14px, 21px, 700);
+	// 		margin-bottom: 32px;
+	// 		position: relative;
+	// 		text-decoration: underline;
+
+	// 		@include xlarge {
+	// 			@include setFont(28px, 42px, 700);
+	// 		}
+
+	// 		@include small {
+	// 			&:nth-child(3),
+	// 			&:nth-child(4) {
+	// 				margin-bottom: 0;
+	// 			}
+	// 		}
+
+	// 		&--active {
+	// 			font-weight: 700;
+
+	// 			&:before {
+	// 				content: '';
+	// 				position: absolute;
+	// 				top: 100%;
+	// 				margin-top: 8px;
+	// 				left: 0;
+	// 				width: 40px;
+	// 				height: 4px;
+	// 				background-color: $grey-dark;
+
+	// 				@include small {
+	// 					margin-top: 8px;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+}
